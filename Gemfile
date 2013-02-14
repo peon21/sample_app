@@ -10,6 +10,7 @@ gem 'execjs'
 group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails'
+	gem 'capybara', '1.1.2'
 end
 
 group :production, :staging do
