@@ -134,7 +134,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara (= 1.1.2)
+  capybara
   execjs
   jquery-rails
   pg
