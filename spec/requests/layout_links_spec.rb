@@ -32,15 +32,16 @@ describe "LayoutLinks" do
   end
 
   it "should have the right links on the layout" do
-    get '/'
-    assert_select "title", :key => "Home"
+    visit root_path
+    page.should have_css('title', :content => "Home" )
     click_link "About"
-    assert_select "title", :key => "About"
+    page.should have_css('title', :content => "About" )
     click_link "Contact"
-    assert_select "title", :key => "Contact"
+    page.should have_css('title', :content => "Contact" )
     click_link "Home"
-    assert_select "title", :key => "Home"
+    page.should have_css('title', :content => "Home" )
     click_link "Sign up now!"
-    assert_select "title", :key => "Sign up"
+    page.should have_css('title', :content => "Sign up" )
+    page.should have_css('a[href="/" ]>img')
   end
 end
