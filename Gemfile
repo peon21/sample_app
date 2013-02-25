@@ -11,6 +11,7 @@ group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'annotate'
 end
 
 group :production, :staging do
