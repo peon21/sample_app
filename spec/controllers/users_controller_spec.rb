@@ -34,6 +34,12 @@ describe UsersController do
       assert_select "h1>img", :class => "gravatar"
     end
 
+    it "should have the right URL" do 
+      get :show, :id => @user
+      assert_select "td>a", :content => user_path(@user), 
+	      		    :href    => user_path(@user)
+    end
+
   end
 
   describe "GET 'new'" do
