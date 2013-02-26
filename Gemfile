@@ -7,6 +7,8 @@ gem 'rails', '3.2.11'
 
 gem 'execjs'
 
+gem 'gravatar_image_tag'
+
 group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails'

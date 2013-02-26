@@ -13,9 +13,25 @@ describe UsersController do
       get :show, :id => @user 
       response.should be_success
     end
+    
     it "should find teh right user" do
       get :show, :id => @user
       assigns(:user).should == @user 
+    end
+
+    it "should have the right title" do
+      get :show, :id => @user
+      assert_select "title",  :content => @user.name
+    end
+    
+    it "should have the user's name" do
+      get :show, :id => @user
+      assert_select "h1", :content => @user.name
+    end
+
+    it "should have a profile image" do
+      get :show, :id => @user
+      assert_select "h1>img", :class => "gravatar"
     end
 
   end
